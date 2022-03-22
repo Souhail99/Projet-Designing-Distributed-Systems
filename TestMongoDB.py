@@ -29,7 +29,7 @@ for document in cursor:
 mydb = client.mydatabase
 collection = mydb.employee
 mydb.employee.delete_many({})
-collection.create_index("ID", unique = True)
+#collection.create_index("ID", unique = True)
 #collection.create_index("ID")
 #esp = collection.create_index([ ("field_to_index", ASCENDING) ])
 
@@ -93,4 +93,28 @@ except:
 # Printing the data inserted
 cursor = collection.find()
 for record in cursor:
-    print(record)
+    print('yo',record)
+
+
+db = client.Binance
+collection = db.symbol
+db.symbol.delete_many({})
+emp_rec1 = {
+            "ID":1,
+            "Civility":"Mr",
+            "name":"Geek",
+            "adress":"Paris",
+            "location":15000,
+            }
+nom={
+        "ID": 1, 
+        "symbol": "ETHBTC", 
+        "priceChangePercent": 0.654
+        }
+nom2={
+        "ID": 2, 
+        "symbol": "BTCUSDT", 
+        "priceChangePercent": 2.976
+        }
+rec_id1 = collection.insert_one(nom)
+rec_id2 = collection.insert_one(nom2)
