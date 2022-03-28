@@ -12,7 +12,26 @@ Aussi, si vous voyez cette ligne : **Output exceeds the size limit. Open the ful
 
 ## Usage of the script
 
-First to import (or install) this :
+# First (it depends on your config and OS)
+
+Launch : MongoDB
+```bash
+mongo --host 127.0.0.1:27017
+```
+Launch : Zookeeper
+```bash
+zookeeper-server-start.sh config/zookeeper.properties
+```
+Launch : Kafka
+```bash
+kafka-server-start.sh config/server.properties
+```
+And for display the data of the topic :
+```bash
+bin/kafka-console-consumer.sh --topic ApiBinance --from-beginning --bootstrap-server localhost:9092
+```
+
+Then, import (or install) this for the notebook (already in the notebook) :
 
 ```py
 from kafka import KafkaProducer, KafkaConsumer
@@ -26,7 +45,16 @@ from itertools import combinations, combinations_with_replacement
 from kafka.admin import KafkaAdminClient, NewTopic
 ```
 
-# Then
+Then, import (or install) this for **EtudeBinance.py** (already in **EtudeBinance.py**) :
+```py
+import requests
+from datetime import *
+import time
+from itertools import combinations, combinations_with_replacement
+```
+
+# Finally
+
 You to use three files, the jupyter notebook **ProjectApache.ipynb**, **fichier.txt** (the file which contains the data of EtudeBinance.py) and **EtudeBinance.py**, you need to put this three files in the same directory and for **EtudeBinance.py** (when you see this line) :  
 
 ```py
