@@ -43,6 +43,7 @@ from pymongo import MongoClient, ASCENDING, DESCENDING
 from pprint import pprint
 from itertools import combinations, combinations_with_replacement
 from kafka.admin import KafkaAdminClient, NewTopic
+from EtudeBinance import getpairs
 ```
 
 Then, import (or install) this for **EtudeBinance.py** (already in **EtudeBinance.py**) :
