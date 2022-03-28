@@ -118,86 +118,6 @@ def orderbooklists(symbol:str,limit=10):
 #endregion
 
 
-
-#region alldata
-#Refresh Data
-def refreshData(symbol:str):
-    headers = {
-        'Content-Type': 'application/json',
-        'X-MBX-APIKEY': api_key
-    }
-    r = requests.get(baseapi + "/api/v3/historicalTrades?symbol=" + symbol,headers=headers)
-    print(r.json()[0])
-    liste=r.json()
-    for dico in liste:
-        dico["side"] = "buyer_and_" if dico["isBuyerMaker"] == True else "seller_and_"
-        dico["side"] += "best match" if dico["isBestMatch"] == True else "not_best_match"
-
-        del dico["isBuyerMaker"]
-        del dico["isBestMatch"]
-    return liste
-
-#The function allow us to know the candle available after the last one in our database, or return in one interval the candle if you don't put a startime or an endtime
-def refreshDataCandle(pair:str,startime=None,endtime=None,interval="1m"):
-    if endtime==None:
-        r = requests.get(baseapi+ "/api/v3/klines?symbol=" + pair +"&interval=" +interval)
-        listes=r.json()
-    else:
-        r = requests.get(baseapi+ "/api/v3/klines?symbol=" + pair +"&interval=" +interval +"&startTime="+ str(startime)+ "&endTime=" +str(endtime))
-        listes=r.json()
-    return StoreDataCandle(listes)
-
-
-
-#rthis function is useful to return in the good order for refreshdata et refreshdatacandle
-def StoreDataCandle(listes:list):
-    listes=listes
-    #print(listes)
-    storage=[]
-    for i in listes:
-        #print(i)
-        storage.append(i[0])
-        storage.append(i[2])
-        storage.append(i[3])
-        storage.append(i[1])
-        storage.append(i[4])
-        storage.append(i[5])
-    return storage
-
-### avoir init storage to write in our database
-pair='ETHUSDT'
-storage=refreshDataCandle(pair)
-storagefulldata =refreshData(pair)
-###
-#we first called candle modify then StorageOfDataCandle
-#The candlModify useful to know the last  candle and return the currently available one
-def candlModify(database:str,pairtosync:str):
-    con = sqlite3.connect(database)
-    query = "SELECT date FROM candles"+pairtosync
-    cur = con.cursor()
-    cur.execute(query)
-    j=cur.fetchall()
-    start_time=int(j[len(j)-1][0])
-    print("endtime", start_time)
-    con.commit() 
-    con.close()
-    timeactuelle=datetime.now().timestamp()
-    end_time = int(timeactuelle) * 1000
-    start_time = start_time * 1000
-    storage=refreshDataCandle(pair,start_time,end_time)
-    del storage[0]
-    return storage
-
-
-
-#region Post-Order
-
-def getdicpost(endpoint:str,param:dict={},headers:dict={}):
-    r=requests.post(baseapi+endpoint,params=param,headers = headers)
-    liste=r.json()
-    return liste
-
-
 def Makethefile(symboles,Allsymboles):
     inexistant=[]
     compteur=1
@@ -233,34 +153,22 @@ def Makethefile(symboles,Allsymboles):
                 file.write("},WEEE")
             else:
                 inexistant.append(symbol)
-    print("Les symboles inexistant dans la liste : ",inexistant)
-
-
-
-
-
-
+    #print("Les symboles inexistant dans la liste : ",inexistant)
 
 
 #region main
 if __name__ == '__main__':
     symboles=list(filter(('').__ne__, getpairs()))
     new=[]
-    #print(allcrypto())
     listesymboles=["BTC","ETH","USDT","USD","BNB","XRP","ADA","DOGE","LTC","BCH","SOL","ETC","LUNA","AVAX","SHIB","DOT","MATIC","AAVE","UNI","VRA","USDC","ADX","USDC","APE","JASMY","GALA","WAVES","LRC"]
     temp = combinations(listesymboles, 2)
     newlist=[]
     for j in list(temp):
-        #print("j :",j)
         newlist.append(j[0]+j[1])
         newlist.append(j[1]+j[0])
-    print(newlist)
-    print("len",len(newlist))
     for i in newlist:
         if i not in symboles:
             newlist.remove(i)
-    print(newlist)
-    print("len",len(newlist))
     start = time.time()
 
     Makethefile(newlist,symboles)
