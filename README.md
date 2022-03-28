@@ -62,4 +62,4 @@ You to use three files, the jupyter notebook **ProjectApache.ipynb**, **fichier.
 ```
 **Change it by your full path (the path of EtudeBinance.py)**
 
-**Le projet est effectué en collaboration avce MArtin MOULY <a href="https://github.com/martinmouly" target="_blank">Martin MOULY</a> et <a href="https://github.com/Pierregvx" target="_blank">Pierre GUEVENEUX</a> dans le cadre du projet Designed Distributed Systems**
+**Le projet est effectué en collaboration avec <a href="https://github.com/martinmouly" target="_blank">Martin MOULY</a> et <a href="https://github.com/Pierregvx" target="_blank">Pierre GUEVENEUX</a> dans le cadre du projet Designed Distributed Systems**
