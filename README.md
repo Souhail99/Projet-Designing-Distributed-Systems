@@ -1,18 +1,18 @@
 # Projet-Designed
 
-Bienvenue pour ce projet alliant Apache Kafka, Kafka Connect et MongoDB.
+Welcome to this project combining Apache Kafka, Kafka Connect and MongoDB.
 
-Le but de ce projet est de travailler sur l'api Binance pour obtenir des données. 
+The goal of this project is to work on the Binance API to get data. 
 
-Dans ce projet, le notebook **ProjectApache.ipynb** contient le coeur du projet. Ici, nous remplissons un fichier composé des données reçu via un fichier python et mit sous la forme d'un fichier texte. 
+In this project, the notebook **ProjectApache.ipynb** contains the core of the project. Here we fill a file with the data received via a python file and put it in the form of a text file. 
 
-Ensuite, avec kafka nous les mettons dans nos topics et à partir de là, Kafka Connect fait le lien avec la database MongoDB. Nous réalisons ensuite des requêtes sur la database. 
+Then, with Kafka we put them in our topics and from there, Kafka Connect links with the MongoDB database. We then perform queries on the database. 
 
-La dernière cellule du Notebook contient un menu interactif, vous laissant au choix de remplir les topics (et par la suite la database), d'effectuer les requêtes mongoDB (cette partie contient un sous-menu vous permettant de sélectionner certaines requêtes) et enfin de quitter le menu.
+The last cell of the notebook contains an interactive menu, allowing you to choose to fill the topics (and subsequently the database), to perform the MongoDB queries (this part contains a sub-menu allowing you to select certain queries) and finally to leave the menu.
 
-Selon votre connexion, il faut environ 1min pour réaliser les appels via l'api Binance et pour remplir le topic, à chaque appel les données changent afin d'avoir les toutes dernières données.
+Depending on your connection, it takes about 1min to make the calls via the Binance API and to fill the topic, with each call the data changes to have the latest data.
 
-Aussi, si vous voyez cette ligne : **Output exceeds the size limit. Open the full output data in a text editor**, pour afficher les données vous devez cliquer sur **in a text editor** pour les afficher par la suite.
+Also, if you see this line: **Output exceeds the size limit. Open the full output data in a text editor**, to display the data you need to click on **in a text editor** to display it afterwards.
 
 ## Usage of the script
 
@@ -70,6 +70,6 @@ You need to use three files, the jupyter notebook **ProjectApache.ipynb**, **fic
 ```py
 %run '/home/souhail/Documents/Designed Distributed Systems/EtudeBinance.py'
 ```
-**Change it by your full path (the path of EtudeBinance.py)**
+**Change it by your full path (the path of EtudeBinance.py).**
 
 **Le projet est effectué en collaboration avec <a href="https://github.com/martinmouly" target="_blank">Martin MOULY</a> et <a href="https://github.com/Pierregvx" target="_blank">Pierre GUEVENEUX</a> dans le cadre du projet Designing Distributed Systems.**
