@@ -38,6 +38,17 @@ And for display the data of the topic :
 ```bash
 bin/kafka-console-consumer.sh --topic ApiBinance --from-beginning --bootstrap-server localhost:9092
 ```
+# Name of Topic and Databse 
+
+For MongoDB :
+
+Our database is called "Binance" and our collection is called "symbol".
+
+For Kafka :
+
+Our Topic is called "ApiBinance".
+
+# Installation
 
 Then, import (or install) this for the notebook (already in the notebook) :
 
