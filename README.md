@@ -14,9 +14,9 @@ Depending on your connection, it takes about 1min to make the calls via the Bina
 
 Also, if you see this line: **Output exceeds the size limit. Open the full output data in a text editor**, to display the data you need to click on **in a text editor** to display it afterwards.
 
-## Usage of the script
+# Usage of the script
 
-# First (it depends on your config or/and OS)
+## First (it depends on your config or/and OS)
 
 Launch : MongoDB
 
@@ -38,7 +38,7 @@ And for display the data of the topic :
 ```bash
 bin/kafka-console-consumer.sh --topic ApiBinance --from-beginning --bootstrap-server localhost:9092
 ```
-# Name of Topic and Databse 
+## Name of Topic and Databse 
 
 For MongoDB :
 
@@ -48,7 +48,7 @@ For Kafka :
 
 Our Topic is called "ApiBinance".
 
-# Installation
+## Installation
 
 Then, import (or install) this for the notebook (already in the notebook) :
 
@@ -83,4 +83,4 @@ You need to use three files, the jupyter notebook **ProjectApache.ipynb**, **fic
 ```
 **Change it by your full path (the path of EtudeBinance.py).**
 
-**Le projet est effectué en collaboration avec <a href="https://github.com/martinmouly" target="_blank">Martin MOULY</a> et <a href="https://github.com/Pierregvx" target="_blank">Pierre GUEVENEUX</a> dans le cadre du projet Designing Distributed Systems.**
+**The project is carried out in collaboration with <a href="https://github.com/martinmouly" target="_blank">Martin MOULY</a> et <a href="https://github.com/Pierregvx" target="_blank">Pierre GUEVENEUX</a> within the Designing Distributed Systems project.**
