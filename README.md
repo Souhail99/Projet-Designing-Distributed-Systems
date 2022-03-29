@@ -42,13 +42,13 @@ bin/kafka-console-consumer.sh --topic ApiBinance --from-beginning --bootstrap-se
 
 For MongoDB :
 
-Our database is called "Binance" and our collection is called "symbol".
+Our database is called **"Binance"** and our collection is called **"symbol"**.
 
 For Kafka :
 
-Our Topic is called "ApiBinance".
+Our Topic is called **"ApiBinance"**.
 
-## Installation
+## Setting up
 
 Then, import (or install) this for the notebook (already in the notebook) :
 
@@ -81,6 +81,7 @@ You need to use three files, the jupyter notebook **ProjectApache.ipynb**, **fic
 ```py
 %run '/home/souhail/Documents/Designed Distributed Systems/EtudeBinance.py'
 ```
+
 **Change it by your full path (the path of EtudeBinance.py).**
 
 **The project is carried out in collaboration with <a href="https://github.com/martinmouly" target="_blank">Martin MOULY</a> et <a href="https://github.com/Pierregvx" target="_blank">Pierre GUEVENEUX</a> within the Designing Distributed Systems project.**
