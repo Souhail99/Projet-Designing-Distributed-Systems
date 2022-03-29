@@ -84,6 +84,6 @@ You need to use three files, the jupyter notebook **ProjectApache.ipynb**, **fic
 
 **Change it by your full path (the path of EtudeBinance.py).**
 
-If you can't find your full path to the file you can delete this line and use only the text file (**In this case, you will not have access to the data renewal.**).
+If you can't find your full path to the file you can delete this line and use only the text file (**In this case, you will not have access to the data renewal**).
 
 **The project is carried out in collaboration with <a href="https://github.com/martinmouly" target="_blank">Martin MOULY</a> et <a href="https://github.com/Pierregvx" target="_blank">Pierre GUEVENEUX</a> within the Designing Distributed Systems project.**
