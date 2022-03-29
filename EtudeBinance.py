@@ -1,5 +1,4 @@
 import requests
-import sqlite3
 from datetime import *
 import time
 from itertools import combinations, combinations_with_replacement
@@ -159,8 +158,7 @@ def Makethefile(symboles,Allsymboles):
 #region main
 if __name__ == '__main__':
     symboles=list(filter(('').__ne__, getpairs()))
-    new=[]
-    listesymboles=["BTC","ETH","USDT","USD","BNB","XRP","ADA","DOGE","LTC","BCH","SOL","ETC","LUNA","AVAX","SHIB","DOT","MATIC","AAVE","UNI","VRA","USDC","ADX","USDC","APE","JASMY","GALA","WAVES","LRC"]
+    listesymboles=["BTC","ETH","USDT","USDC","BNB","XRP","ADA","DOGE","LTC","BCH","SOL","ETC","LUNA","AVAX","SHIB","DOT","MATIC","AAVE","UNI","VRA","USDC","ADX","USDC","APE","JASMY","GALA","WAVES","LRC","EOS","TRX"]
     temp = combinations(listesymboles, 2)
     newlist=[]
     for j in list(temp):
@@ -170,11 +168,12 @@ if __name__ == '__main__':
         if i not in symboles:
             newlist.remove(i)
     start = time.time()
-
-    Makethefile(newlist,symboles)
-
+    myList = []
+    for element in newlist:
+        if element not in myList:
+            myList.append(element)
+    Makethefile(myList,symboles)
     end = time.time()
     elapsed = end - start
-
     print(f'Temps d\'exécution : {elapsed}s')
 #endregion
