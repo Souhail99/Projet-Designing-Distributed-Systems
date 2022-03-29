@@ -10,7 +10,7 @@ Then, with Kafka we put them in our topics and from there, Kafka Connect links w
 
 The last cell of the notebook contains an interactive menu, allowing you to choose to fill the topics (and subsequently the database), to perform the MongoDB queries (this part contains a sub-menu allowing you to select certain queries) and finally to leave the menu.
 
-Depending on your connection, it takes about 1min to make the calls via the Binance API and to fill the topic, with each call the data changes to have the latest data.
+Depending on your connection, it takes about **1 min - 2 min** to make the calls via the Binance API and to fill the topic, with each call the data changes to have the latest data.
 
 Also, if you see this line: **Output exceeds the size limit. Open the full output data in a text editor**, to display the data you need to click on **in a text editor** to display it afterwards.
 
