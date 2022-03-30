@@ -1,4 +1,4 @@
-# Projet-Designed
+# Projet-Designing-Distributed-Systems
 
 Welcome to this project combining Apache Kafka, Kafka Connect and MongoDB.
 
