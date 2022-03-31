@@ -42,10 +42,6 @@ CurrentAveragePrice="/api/v3/avgPrice"
 PriceChangeStatistics="/api/v3/ticker/24hr" #24hr Ticker Price Change Statistics
 #endregion
 
-api_key="BeASbgT7Ti3qs09RMKRLJqb69aCjkSaMhBkOlZAHdxRJfnXhqXj0inA2S1pEpSW4"
-secret_key="b0dhGlnqjFyE8xgXaBoTbGSGgXPqnyXgRGnqaH3neKYR2mQIv1L9RlJpRZ6f4NTW"
-
-
 
 def Latestprice(endpoint:str,param:dict={}):
     r=requests.get(baseapi+endpoint,params=param)
